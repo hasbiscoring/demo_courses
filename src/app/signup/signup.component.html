@@ -1,22 +1,15 @@
-<form class="form"  >
+<div class="form">
     
-        <mat-form-field  appearance="fill">
-        <mat-label>Email</mat-label>
-        <input matInput type="email" autocomplete="off" [(ngModel)]="">
-      </mat-form-field>
-    
+      <label>Email</label>
+      <input type="email" placeholder="Email" autocomplete="off" [(ngModel)]="this.email">
     <br>
-      <mat-form-field appearance="fill">
-        <mat-label>Password</mat-label>
-        <input matInput type="password" placeholder="password" autocomplete="off" formControlName="psw">
-      </mat-form-field>
+      <label>Password</label>
+      <input type="password" placeholder="Password" autocomplete="off" [(ngModel)]="this.password">
     <br>
-      <mat-form-field appearance="fill">
-        <mat-label>Confirm Password</mat-label>
-        <input matInput type="password" placeholder="confirm password" autocomplete="off" formControlName="cpsw">
-      </mat-form-field>
+      <label>Confirm Password</label>
+      <input type="password" placeholder="Confirm password" autocomplete="off" [(ngModel)]="this.passwordConfirm">
    
       <br>
       
-      <button mat-button color="primary">signup</button>
-    </form>
+      <button color="primary" (click)="this.signUp()">Signup</button>
+</div>

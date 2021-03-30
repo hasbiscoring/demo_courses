@@ -11,6 +11,7 @@ export class SharedService {
 
   signup(login:string ,psw :string,cpsw:string){
 
+    console.log(login + ", " + psw + ", " + cpsw);
     return this.http.post(`http://localhost:8001/signup/`, 
     { login,
        psw, 

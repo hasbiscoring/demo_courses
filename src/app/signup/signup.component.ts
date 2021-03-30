@@ -1,6 +1,5 @@
 import { Component, OnInit,Output ,EventEmitter} from '@angular/core';
 import {SharedService} from '../shared.service';
-import { FormBuilder, FormGroup ,Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-signup',
@@ -9,26 +8,22 @@ import { FormBuilder, FormGroup ,Validators} from "@angular/forms";
 })
 export class SignupComponent implements OnInit {
  
-  public login : string 
+  public email : string;
+  public password : string;
+  public passwordConfirm : string;
 
   constructor(
-    private service :SharedService,
-    private signupForm:FormGroup,
-    private form : FormBuilder){}
-  
-   
-      
-  
-  
+    public service :SharedService){
+      this.email = "";
+      this.password = "";
+      this.passwordConfirm = "";
+    }
 
-  ngOnInit(){}
+  ngOnInit(){
+  }
   
-
+  public signUp() {
+    this.service.signup(this.email, this.password, this.passwordConfirm);
+  }
 
 }
-
-
-
-  
-
-
